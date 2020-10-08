@@ -32,7 +32,7 @@ func wasmParaseDemo(this js.Value, args []js.Value) interface{} {
 	js.CopyBytesToGo(buf, args[0])
 	match, err := Parse(bytes.NewReader(buf))
 	if err != nil {
-		log.Printf("parse error")
+		log.Printf("parse error %s", err.Error())
 	}
 	writer := bytes.NewBufferString("")
 	json.NewEncoder(writer).Encode(match)
