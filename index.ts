@@ -3,7 +3,8 @@ import { config } from "dotenv"
 import express from "express"
 import { router } from "./api"
 
-[{}, { path: path.join(__dirname, ".env.defaults") }].forEach(config)
+config()
+config({ path: path.join(__dirname, ".env.defaults") })
 
 const app = express()
 app.use(router)
