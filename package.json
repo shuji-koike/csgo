@@ -1,5 +1,5 @@
 {
-  "name": "demhub",
+  "name": "@shuji-koike/csgo",
   "private": true,
   "scripts": {
     "start": "nodemon",
