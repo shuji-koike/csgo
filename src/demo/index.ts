@@ -1,8 +1,7 @@
-/* eslint-disable no-unused-vars */
-
 import axios from "axios"
 import icons from "./icons.json"
 
+/* eslint-disable no-unused-vars */
 export enum Team {
   Unassigned = 0,
   Spectators = 1,
@@ -31,6 +30,7 @@ export enum PlayerState {
   IsReloading = 1 << 9,
   IsUnknown = 1 << 10,
 }
+/* eslint-enable no-unused-vars */
 
 export type Dict<V = string> = {
   [key: string]: V
