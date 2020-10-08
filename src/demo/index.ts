@@ -102,6 +102,10 @@ export function pointToArray(p: Point) {
   return [p.X, p.Y]
 }
 
+export function pointsToString(arr: Point[]) {
+  return arr.map(pointToArray).flat().join(" ")
+}
+
 export function findRound(
   match: Match,
   tick: number | undefined

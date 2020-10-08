@@ -4,6 +4,7 @@ import {
   bombColor,
   colorToMatrix,
   pointToArray,
+  pointsToString,
   rotatePoint,
   teamColor,
   icon,
@@ -144,11 +145,11 @@ export const MolotovView: React.FC<{
 }> = function ({ frame }) {
   return (
     <g>
-      {frame.Nades?.filter(e => e.Flames?.length).map((e, i) => (
+      {frame.Nades?.filter(e => e.Flames?.length).map((nade, i) => (
         <polygon
           key={i}
-          points={e.Flames?.map(p => p.X + " " + p.Y).join(" ")}
-          stroke="#b50f07"
+          points={pointsToString(nade.Flames || [])}
+          stroke={teamColor(nade.Team)}
           strokeWidth="2"
           fill="#8e0c05"
           style={{ fillOpacity: 0.5 }}
