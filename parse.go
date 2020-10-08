@@ -326,7 +326,10 @@ func Parse(reader io.Reader) (match Match, err error) {
 	})
 
 	err = parser.ParseToEnd()
-	if err != nil {
+	if err == demoinfocs.ErrUnexpectedEndOfDemo {
+		log.Printf("%6d| ErrUnexpectedEndOfDemo\n", parser.CurrentFrame())
+		err = nil
+	} else if err != nil {
 		log.Printf("%6d| ParseError\t%s\n", parser.CurrentFrame(), err.Error())
 	} else {
 		log.Printf("%6d| ParseToEnd\n", parser.CurrentFrame())
