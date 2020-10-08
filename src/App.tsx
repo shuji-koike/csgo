@@ -33,7 +33,7 @@ function MainSwitch() {
       <Route path="/matches" component={Matches}></Route>
       <Route path="/files/*" component={DemoPage}></Route>
       <Route path="/files" component={DemoList}></Route>
-      <Route path="/demhub" component={Sandbox}></Route>
+      <Route path="/sandbox" component={Sandbox}></Route>
       <Route path="/" component={Home}></Route>
     </Switch>
   )

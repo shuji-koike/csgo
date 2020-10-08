@@ -2,6 +2,7 @@
 /dist
 /static
 /var
+/csgo
 package-lock.json
 yarn.lock
 __debug_bin

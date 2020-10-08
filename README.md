@@ -7,6 +7,14 @@ npm start
 npm build
 ```
 
+```sh
+go get -u
+go build .
+
+cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" ./static/wasm_exec.js
+GOOS=js GOARCH=wasm go build -o ./static/main.wasm .
+```
+
 # links
 
 - https://github.com/markus-wa/demoinfocs-golang
@@ -40,11 +48,6 @@ ORDER BY COUNT(_) DESC
 
 ```sh
 go get -u github.com/pilu/fresh
-```
-
-```sh
-cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" ./static/wasm_exec.js
-GOOS=js GOARCH=wasm go build -o ./static/main.wasm .
 ```
 
 ```sh
