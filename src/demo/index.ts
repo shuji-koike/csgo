@@ -207,6 +207,9 @@ export function armorIcon(player: Player) {
   return (
     (player.State & PlayerState.HasHelmet && icon(403)) ||
     (player.State & PlayerState.HasArmor && icon(402)) ||
-    "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+    EmptyImage
   )
 }
+
+export const EmptyImage =
+  "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
