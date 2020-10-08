@@ -81,13 +81,11 @@ function tickToSecond(match: Match, round: Round, tick: number) {
   return ((tick || 0) - round.Frames[0].Tick) / match.TickRate
 }
 
-function frameToTime(match: Match, round: Round, frame: Frame) {
+function frameToTime(match: Match, round: Round, frame: Frame): number {
+  const tick =
+    round.Frames.find(e => e.Bomb.State & BombState.Planted)?.Tick ?? NaN
   return frame.Bomb.State & BombState.Planted
-    ? Math.floor(
-        (frame.Tick -
-          round.Frames.find(e => e.Bomb.State & BombState.Planted)?.Tick!) /
-          match.TickRate
-      )
+    ? Math.floor((frame.Tick - tick) / match.TickRate)
     : round.TimeLimit - tickToSecond(match, round, frame.Tick)
 }
 

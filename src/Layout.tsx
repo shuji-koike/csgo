@@ -27,7 +27,7 @@ export const LayoutContext = React.createContext<{
   setLayout: (layout: LayoutState) => void
 }>({
   layout: new LayoutState(),
-  setLayout: () => {},
+  setLayout: () => undefined,
 })
 
 export const Layout: React.FC<{

@@ -6,8 +6,8 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -21,7 +21,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "import"],
+  "plugins": ["@typescript-eslint", "react", "import"],
   "settings": {
     "react": {
       "version": "16.13"

@@ -9,7 +9,7 @@ interface MatchState {
   setTick: (tick: number) => void
 }
 
-export const MatchContext = React.createContext<MatchState>({} as any)
+export const MatchContext = React.createContext<MatchState>({} as MatchState)
 
 export const MatchContextProvider: React.FC = ({ children }) => {
   const path = useParams<{ 0: string | undefined }>()?.[0]

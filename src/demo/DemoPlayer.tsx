@@ -23,7 +23,7 @@ export const DemoPlayer: React.FC<{
   const ref = React.createRef<HTMLFormElement>()
   const currentRound = round?.Round || 0
   const currentFrame = frame ? round?.Frames.indexOf(frame) || 0 : 0
-  let ids = frame?.Players.map(e => e.ID).sort((a, b) => a - b)
+  const ids = frame?.Players.map(e => e.ID).sort((a, b) => a - b)
   React.useEffect(() => {
     if (frame && !round?.Frames.includes(frame)) setFrame(round?.Frames[0])
   }, [round])

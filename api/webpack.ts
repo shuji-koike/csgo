@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import express from "express"
 
 export const router = express.Router()
 
 router.use((req, res, next) => {
-  if (/^text\/html/.test(req.headers["accept"]!)) req.url = "/index.html"
+  if (/^text\/html/.test(req.headers["accept"] || "")) req.url = "/index.html"
   next()
 })
 if (process.env.NODE_ENV != "production") {

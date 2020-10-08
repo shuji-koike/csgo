@@ -25,7 +25,7 @@ router.use("/www.hltv.org/results", async (req, res) => {
     })
 })
 router.use("/www.hltv.org/matches/:id/:title", async (req, res) => {
-  let data = {}
+  const data = {}
   const url = "https:/" + req.originalUrl
   osmosis
     .get(url)

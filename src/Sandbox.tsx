@@ -4,7 +4,8 @@ import { DemoPlayer } from "./demo/DemoPlayer"
 export const Sandbox: React.FC = () => {
   const [match, setMatch] = React.useState<Match | null>(null)
   const [output, setOutput] = React.useState([])
-  function parseDemo(file: File) {
+  function parseDemo(file?: File) {
+    if (!file) return
     const worker = new Worker("/static/worker.js")
     worker.postMessage(["wasmParaseDemo", file])
     worker.onmessage = function ({ data: [cmd, ...args] }) {
@@ -28,7 +29,7 @@ export const Sandbox: React.FC = () => {
       <input
         type="file"
         accept=".dem"
-        onChange={e => parseDemo(e.target.files?.[0]!)}
+        onChange={e => parseDemo(e.currentTarget.files?.[0])}
       />
       <small>
         <p>Parse will start automatically and may take up to few minutes.</p>

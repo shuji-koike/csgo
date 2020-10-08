@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import child_process from "child_process"
 import fs from "fs"
 import path from "path"

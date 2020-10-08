@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path")
 const webpack = require("webpack")
 const { NODE_ENV, GITHUB_SHA, BASE_URL } = process.env

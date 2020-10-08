@@ -135,12 +135,12 @@ export async function fetchSteamData(ids: number[]) {
 
 class PlayerScore {
   ID: number
-  Name: string = ""
+  Name = ""
   Team: Team = 0
-  kills: number = 0
-  assists: number = 0
-  deaths: number = 0
-  headshots: number = 0
+  kills = 0
+  assists = 0
+  deaths = 0
+  headshots = 0
   constructor(ID: number) {
     this.ID = ID
   }
